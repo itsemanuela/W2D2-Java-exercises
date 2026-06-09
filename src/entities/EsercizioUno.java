@@ -39,11 +39,25 @@ public class EsercizioUno {
                 parole = input.nextLine();
 
                 // CONTROLLO: Se la stringa contiene SOLO lettere (dalla a alla z, maiuscole o minuscole)
-                // metodo regex per accettare solo stringhe
-                if (parole.matches("[a-zA-Z]+")) {
-                    parolaValida = true;
-                } else {
+                if (parole.isEmpty()) {
                     System.out.println("Errore: devi inserire una stringa e basta (niente numeri o simboli)!");
+                } else {
+                    boolean soloLettere = true;
+
+                    // Esamino la parola carttere x carattere
+                    for (int j = 0; j < parole.length(); j++) {
+                        char c = parole.charAt(j);
+                        if (!Character.isLetter(c)) {
+                            soloLettere = false;
+                            break;
+                        }
+                    }
+                    //ho visto metodo regex .matches("[a-zA-Z]+") = fa stessa cosa di char
+                    if (soloLettere) {
+                        parolaValida = true;
+                    } else {
+                        System.out.println("Errore: devi inserire una stringa e basta (niente numeri o simboli)!");
+                    }
                 }
             }
 

@@ -15,6 +15,23 @@ public class EsercizioDue {
         } return  lista;
     }
 
+    public static List<Integer> secondaLista(List<Integer> lista){
+        List<Integer> lista2 = new ArrayList<>(lista);
+        for (int i =lista.size() -1; i>=0;  i--) {
+            lista2.add(lista.get(i));
+        } return lista2;
 
+    }
+
+    //verifico se gli indici sono pari o dispari dividendoli per due e li stampo nel main
+public static void StampoIndici(List<Integer> lista, boolean Pari){
+        for (int i= 0; i< lista.size(); i++){
+if (Pari && i % 2 == 0){
+    System.out.println("Indice pari" + " " + lista.get(i));
+} else {
+    System.out.println("Indice non pari" + " " + lista.get(i));
+}
+    }
+}
 
 }
